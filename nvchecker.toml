@@ -1,0 +1,90 @@
+[__config__]
+oldver = "old_ver.json"
+newver = "new_ver.json"
+
+
+[astrofox]
+source = "github"
+github = "astrofox-io/astrofox"
+use_max_tag = true
+prefix = "v"
+
+[bark-server]
+source = "github"
+github = "Finb/bark-server"
+use_max_tag = true
+prefix = "v"
+
+[dida]
+source = "cmd"
+cmd = '''
+_url=https://dida365.com/static/getApp/download\?type\=linux_deb_x64
+curl -sSL -D - $_url -o /dev/null |
+ grep -oE 'dida-[0-9.]+-amd64.deb' |
+ cut -d'-' -f2 
+'''
+
+[dingtalk]
+source = "regex"
+url = "https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Update/other/amd64/linux_dingtalk_update_package_gray.json"
+regex = '"update_version": "([\d\w.-]+)"'
+
+[gstarcad]
+source = "regex"
+regex = "https://hccad.gstarcad.cn/linux[\\d]+/v([\\d.]+)/deb/gstarcad_[\\w\\d]+.deb"
+url = "https://www.gstarcad.com/cad_linux/"
+
+[iauto]
+source = "cmd"
+cmd = '''
+_url='https://www.iautodraw.com'
+_jspath=$(curl ${_url} | grep -oE 'app.([a-z0-9]+).js')
+curl ${_url}/static/js/${_jspath} |
+    grep -oE 'IAuto Setup [0-9.]+\(win 32\).exe' |
+    grep -oE '[0-9.]+' |
+    head -1
+'''
+
+[lx-music]
+source = "github"
+github = "lyswhut/lx-music-desktop"
+use_max_tag = true
+prefix = "v"
+
+[mathpix-snipping-tool]
+source = "regex"
+regex = "https://download.mathpix.com/linux/Mathpix_Snipping_Tool-x86_64.v([\\d.]+).AppImage"
+url = "https://mathpix.com/"
+
+[mtxx]
+source = "regex"
+regex = "xiuxiu.dl.meitu.com/mtxx-x86_64-([\\d.]+).deb"
+url = "https://pc.meitu.com/download"
+
+[qqmusic]
+source = "regex"
+regex = "https://dldir1.qq.com/music/clntupate/linux/deb/qqmusic_([\\d.]+)_amd64.deb"
+url = "https://y.qq.com/download/download.html"
+
+[svstudio]
+source = "regex"
+regex = "([\\d.]+)</a>"
+url = "https://resource.dreamtonics.com/download/Synthesizer%20V%20Studio%20Basic/"
+
+[tradingview]
+source = 'cmd'
+cmd = '''json=$(curl -H 'X-Ubuntu-Series: 16' https://api.snapcraft.io/api/v1/snaps/details/tradingview)
+ver=$(echo $json | jq -r '.version')
+revision=$(echo $json | jq -r '.revision')
+echo $ver-$revision
+'''
+
+[yade]
+source = "gitlab"
+gitlab = "yade-dev/trunk"
+use_max_tag = true
+
+[zwcad]
+source = "regex"
+regex = "https://download.zwcad.com/zwcad/cad_linux/[\\d]+/[\\w\\d]+/zwcad([\\d_.]+)_zh-cn_amd64.deb"
+url = "https://www.zwsoft.cn/product/zwcad/linux"
