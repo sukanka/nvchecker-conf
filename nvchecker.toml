@@ -2,6 +2,11 @@
 oldver = "old_ver.json"
 newver = "new_ver.json"
 
+[alist]
+source = "github"
+github = "Xhofe/alist"
+use_max_tag = true
+prefix = "v"
 
 [astrofox]
 source = "github"
@@ -12,6 +17,12 @@ prefix = "v"
 [bark-server]
 source = "github"
 github = "Finb/bark-server"
+use_max_tag = true
+prefix = "v"
+
+[clash4windows]
+source="github"
+github="Fndroid/clash_for_windows_pkg"
 use_max_tag = true
 prefix = "v"
 
@@ -29,6 +40,14 @@ source = "regex"
 url = "https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Update/other/amd64/linux_dingtalk_update_package_gray.json"
 regex = '"update_version": "([\d\w.-]+)"'
 
+[fbreader]
+source = 'cmd'
+cmd = '''json=$(curl -H 'X-Ubuntu-Series: 16' https://api.snapcraft.io/api/v1/snaps/details/fbreader)
+ver=$(echo $json | jq -r '.version')
+revision=$(echo $json | jq -r '.revision')
+echo $ver-$revision
+'''
+
 [gstarcad]
 source = "regex"
 regex = "https://hccad.gstarcad.cn/linux[\\d]+/v([\\d.]+)/deb/gstarcad_[\\w\\d]+.deb"
@@ -44,6 +63,10 @@ curl ${_url}/static/js/${_jspath} |
     grep -oE '[0-9.]+' |
     head -1
 '''
+[icalingua-plus-plus]
+source="github"
+github="Icalingua-plus-plus/Icalingua-plus-plus"
+use_max_tag = true
 
 [lx-music]
 source = "github"
@@ -56,6 +79,12 @@ source = "regex"
 regex = "https://download.mathpix.com/linux/Mathpix_Snipping_Tool-x86_64.v([\\d.]+).AppImage"
 url = "https://mathpix.com/"
 
+[mpreal]
+source="github"
+github="advanpix/mpreal"
+use_max_tag = true
+include_regex="mpfrc.*"
+
 [mtxx]
 source = "regex"
 regex = "xiuxiu.dl.meitu.com/mtxx-x86_64-([\\d.]+).deb"
@@ -65,6 +94,16 @@ url = "https://pc.meitu.com/download"
 source = "regex"
 regex = "https://dldir1.qq.com/music/clntupate/linux/deb/qqmusic_([\\d.]+)_amd64.deb"
 url = "https://y.qq.com/download/download.html"
+
+[stanc]
+source="github"
+github="stan-dev/cmdstan"
+use_max_tag = true
+
+[stanmath]
+source="github"
+github="stan-dev/math"
+use_max_tag = true
 
 [svstudio]
 source = "regex"
@@ -83,6 +122,12 @@ echo $ver-$revision
 source = "gitlab"
 gitlab = "yade-dev/trunk"
 use_max_tag = true
+
+[yank-note]
+source="github"
+github="purocean/yn"
+use_max_tag = true
+prefix = "v"
 
 [zwcad]
 source = "regex"
