@@ -26,6 +26,12 @@ github="Fndroid/clash_for_windows_pkg"
 use_max_tag = true
 prefix = "v"
 
+[dendrite]
+source="github"
+github="matrix-org/dendrite"
+use_max_tag = true
+
+
 [dida]
 source = "cmd"
 cmd = '''
@@ -63,6 +69,7 @@ curl ${_url}/static/js/${_jspath} |
     grep -oE '[0-9.]+' |
     head -1
 '''
+
 [icalingua-plus-plus]
 source="github"
 github="Icalingua-plus-plus/Icalingua-plus-plus"
@@ -94,6 +101,10 @@ url = "https://pc.meitu.com/download"
 source = "regex"
 regex = "https://dldir1.qq.com/music/clntupate/linux/deb/qqmusic_([\\d.]+)_amd64.deb"
 url = "https://y.qq.com/download/download.html"
+
+[rustdesk-server]
+source="github"
+github="rustdesk/rustdesk-server"
 
 [stanc]
 source="github"
