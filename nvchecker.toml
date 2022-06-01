@@ -140,6 +140,11 @@ github="purocean/yn"
 use_max_tag = true
 prefix = "v"
 
+[wiznote]
+source = "regex"
+regex = "([0-9.]+)\\s?\\(\\d{4}-\\d+-\\d\\)"
+url = "https://www.wiz.cn/zh-cn/wiznew.html"
+
 [zwcad]
 source = "regex"
 regex = "https://download.zwcad.com/zwcad/cad_linux/[\\d]+/[\\w\\d]+/zwcad([\\d_.]+)_zh-cn_amd64.deb"
