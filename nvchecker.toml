@@ -105,6 +105,7 @@ url = "https://y.qq.com/download/download.html"
 [rustdesk-server]
 source="github"
 github="rustdesk/rustdesk-server"
+use_max_tag = true
 
 [stanc]
 source="github"
