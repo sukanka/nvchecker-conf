@@ -38,7 +38,7 @@ cmd = '''
 _url=https://dida365.com/static/getApp/download\?type\=linux_deb_x64
 curl -sSL -D - $_url -o /dev/null |
  grep -oE 'dida-[0-9.]+-amd64.deb' |
- cut -d'-' -f2 
+ cut -d'-' -f2
 '''
 
 [dingtalk]
@@ -73,6 +73,11 @@ curl ${_url}/static/js/${_jspath} |
 [icalingua-plus-plus]
 source="github"
 github="Icalingua-plus-plus/Icalingua-plus-plus"
+use_max_tag = true
+
+[lsky-pro]
+source = "github"
+github = "lsky-org/lsky-pro"
 use_max_tag = true
 
 [lx-music]
