@@ -26,6 +26,12 @@ github="Fndroid/clash_for_windows_pkg"
 use_max_tag = true
 prefix = "v"
 
+[clash-verge]
+source="github"
+github="zzzgydi/clash-verge"
+use_max_tag = true
+prefix = "v"
+
 [dendrite]
 source="github"
 github="matrix-org/dendrite"
