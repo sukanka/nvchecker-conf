@@ -47,13 +47,13 @@ source = "regex"
 url = "https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Update/other/amd64/linux_dingtalk_update_package_gray.json"
 regex = '"update_version": "([\d\w.-]+)"'
 
-[fbreader]
-source = 'cmd'
-cmd = '''json=$(curl -H 'X-Ubuntu-Series: 16' https://api.snapcraft.io/api/v1/snaps/details/fbreader)
-ver=$(echo $json | jq -r '.version')
-revision=$(echo $json | jq -r '.revision')
-echo $ver-$revision
-'''
+# [fbreader]
+# source = 'cmd'
+# cmd = '''json=$(curl -H 'X-Ubuntu-Series: 16' https://api.snapcraft.io/api/v1/snaps/details/fbreader)
+# ver=$(echo $json | jq -r '.version')
+# revision=$(echo $json | jq -r '.revision')
+# echo $ver-$revision
+# '''
 
 [gstarcad]
 source = "regex"
@@ -135,13 +135,6 @@ source = "regex"
 regex = "svstudio/([\\d.]+)"
 url = "https://auth.dreamtonics.com/update.php?operation=fetch-update&product=Synthesizer%20V%20Studio%20Basic&key&current-version=67073&platform=linux"
 
-[tradingview]
-source = 'cmd'
-cmd = '''json=$(curl -H 'X-Ubuntu-Series: 16' https://api.snapcraft.io/api/v1/snaps/details/tradingview)
-ver=$(echo $json | jq -r '.version')
-revision=$(echo $json | jq -r '.revision')
-echo $ver-$revision
-'''
 
 [yade]
 source = "gitlab"
