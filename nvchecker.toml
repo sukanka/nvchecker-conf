@@ -20,16 +20,26 @@ github = "Finb/bark-server"
 use_max_tag = true
 prefix = "v"
 
+[bookxnote]
+source = 'regex'
+regex = "http://www.bookxnote.com/setup/BookxNotePro_ubuntu_amd64-([\\d.]+).deb"
+url = "http://www.bookxnote.com/"
+
+[citespace]
+source = "regex"
+regex = "([\\d.A-Z]+) Basic"
+url = "https://citespace.podia.com/download"
+
 [clash4windows]
-source="github"
-github="Fndroid/clash_for_windows_pkg"
+source = "github"
+github = "Fndroid/clash_for_windows_pkg"
 use_max_tag = true
 prefix = "v"
 
 
 [dendrite]
-source="github"
-github="matrix-org/dendrite"
+source = "github"
+github = "matrix-org/dendrite"
 use_max_tag = true
 
 
@@ -47,17 +57,22 @@ source = "regex"
 url = "https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Update/other/amd64/linux_dingtalk_update_package_gray.json"
 regex = '"update_version": "([\d\w.-]+)"'
 
-# [fbreader]
-# source = 'cmd'
-# cmd = '''json=$(curl -H 'X-Ubuntu-Series: 16' https://api.snapcraft.io/api/v1/snaps/details/fbreader)
-# ver=$(echo $json | jq -r '.version')
-# revision=$(echo $json | jq -r '.revision')
-# echo $ver-$revision
-# '''
+[fbreader]
+source = 'cmd'
+cmd = '''json=$(curl -H 'X-Ubuntu-Series: 16' https://api.snapcraft.io/api/v1/snaps/details/fbreader)
+ver=$(echo $json | jq -r '.version')
+revision=$(echo $json | jq -r '.revision')
+echo $ver-$revision
+'''
+
+[foxit-pdfeditor]
+source = "regex"
+regex = "([\\d.]+)[\\\\a-z0-9]+V10 SP1"
+url = "https://www.foxitsoftware.cn/portal/download/getpackage.html?product=Foxit-PhantomPDF-Linux&language=English&platform=Linux&version=&package_type=&special=0&oldVersion=null"
 
 [gstarcad]
 source = "regex"
-regex = "https://hccad.gstarcad.cn/linux[\\d]+/v([\\d.]+)/deb/gstarcad_[\\w\\d]+.deb"
+regex = "https://hccad.gstarcad.cn/linux[\\d]+/v([\\d.]+)/deb/gstarcad_[\\d.]+_amd64.deb"
 url = "https://www.gstarcad.com/cad_linux/"
 
 [iauto]
@@ -72,8 +87,8 @@ curl ${_url}/static/js/${_jspath} |
 '''
 
 [icalingua-plus-plus]
-source="github"
-github="Icalingua-plus-plus/Icalingua-plus-plus"
+source = "github"
+github = "Icalingua-plus-plus/Icalingua-plus-plus"
 use_latest_release = true
 
 [lsky-pro]
@@ -93,15 +108,21 @@ regex = "https://download.mathpix.com/linux/Mathpix_Snipping_Tool-x86_64.v([\\d.
 url = "https://mathpix.com/"
 
 [mpreal]
-source="github"
-github="advanpix/mpreal"
+source = "github"
+github = "advanpix/mpreal"
 use_max_tag = true
-include_regex="mpfrc.*"
+include_regex = "mpfrc.*"
 
 [mtxx]
 source = "regex"
 regex = "xiuxiu.dl.meitu.com/mtxx-x86_64-([\\d.]+).deb"
 url = "https://pc.meitu.com/download"
+
+
+[ox-console]
+source = "regex"
+regex = ""
+url = "https://www.doornik.com/products.html#OxCons"
 
 [qqmusic]
 source = "regex"
@@ -109,25 +130,25 @@ regex = "https://dldir1.qq.com/music/clntupate/linux/deb/qqmusic_([\\d.]+)_amd64
 url = "https://y.qq.com/download/download.html"
 
 [rustdesk-server]
-source="github"
-github="rustdesk/rustdesk-server"
+source = "github"
+github = "rustdesk/rustdesk-server"
 use_latest_release = true
 
 
 [ryusak]
-source="github"
-github="Ecks1337/RyuSAK"
+source = "github"
+github = "Ecks1337/RyuSAK"
 use_max_tag = true
 prefix = "v"
 
 [stanc]
-source="github"
-github="stan-dev/cmdstan"
+source = "github"
+github = "stan-dev/cmdstan"
 use_max_tag = true
 
 [stanmath]
-source="github"
-github="stan-dev/math"
+source = "github"
+github = "stan-dev/math"
 use_max_tag = true
 
 [svstudio]
@@ -135,6 +156,10 @@ source = "regex"
 regex = "svstudio/([\\d.]+)"
 url = "https://auth.dreamtonics.com/update.php?operation=fetch-update&product=Synthesizer%20V%20Studio%20Basic&key&current-version=67073&platform=linux"
 
+[typora]
+source = "regex"
+url = "https://typora.io/releases/stable?no-warning"
+regex = "https://download.typora.io/linux/typora_([\\d.]+)_amd64.deb"
 
 [yade]
 source = "gitlab"
@@ -142,8 +167,8 @@ gitlab = "yade-dev/trunk"
 use_max_tag = true
 
 [yank-note]
-source="github"
-github="purocean/yn"
+source = "github"
+github = "purocean/yn"
 use_max_tag = true
 prefix = "v"
 
@@ -154,5 +179,5 @@ url = "https://www.wiz.cn/zh-cn/wiznew.html"
 
 [zwcad]
 source = "regex"
-regex = "https://download.zwcad.com/zwcad/cad_linux/[\\d]+/[\\w\\d]+/zwcad([\\d_.]+)_zh-cn_amd64.deb"
+regex = "https://dl.zwsoft.cn/zwcad/cad_linux/[\\d]+/[\\w\\d]+/zwcad([\\d_.]+)_amd64.deb"
 url = "https://www.zwsoft.cn/product/zwcad/linux"
