@@ -157,9 +157,10 @@ regex = "svstudio/([\\d.]+)"
 url = "https://auth.dreamtonics.com/update.php?operation=fetch-update&product=Synthesizer%20V%20Studio%20Basic&key&current-version=67073&platform=linux"
 
 [typora]
-source = "regex"
-url = "https://typora.io/releases/stable?no-warning"
-regex = "https://download.typora.io/linux/typora_([\\d.]+)_amd64.deb"
+source = "cmd"
+cmd = '''
+curl -s https://www.typora.io/linux/Packages | grep Version | cut -f 2 -d ' ' |  cut -f 1 -d '-' | uniq|tail -1
+'''
 
 [yade]
 source = "gitlab"
