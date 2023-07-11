@@ -102,6 +102,12 @@ github = "lyswhut/lx-music-desktop"
 use_max_tag = true
 prefix = "v"
 
+[mautrix-whatsapp]
+source = "github"
+github = "mautrix/whatsapp"
+use_max_tag = true
+prefix = "v"
+
 [mathpix-snipping-tool]
 source = "regex"
 regex = "https://download.mathpix.com/linux/Mathpix_Snipping_Tool-x86_64.v([\\d.]+).AppImage"
